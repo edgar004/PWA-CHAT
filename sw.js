@@ -55,6 +55,11 @@ self.addEventListener('activate', e => {
             }
 
 
+            if (key !== DYNAMIC_CACHE && key.includes('dynamic')) {
+                return caches.delete(key);
+            }
+
+
 
         });
 
